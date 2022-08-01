@@ -16,7 +16,7 @@ void task_2_Test_Drive(const WordsVector& words_vector);
 void task_3_Test_Drive(const WordsVector& words_vector);
 void validate_unique_words_vector(const WordsVector& word_vector);
 void task_4_Test_Drive(const WordsVector& words_vector);
-// void task_5_Test_Drive();
+void task_5_Test_Drive();
 // void task_6_test_driver();
 // void task_7_test_driver();
 // void task_8_test_driver(int n);
@@ -113,41 +113,41 @@ void task_4_Test_Drive(const WordsVector& words_vector)
 {
    WordsVector unique_words_vector = remove_duplicates(words_vector);
    cout << "All unique words\n";
-   print_words_vector(unique_words_vector);
+   // print_words_vector(unique_words_vector);
    validate_unique_words_vector(unique_words_vector);
 }
 
-// // Task 5
-// void task_5_Test_Drive()
-// {
-//    std::string str_i_saw = std::string("was it a car or A Cat I saW?");
-//    bool result_i_saw = is_palindrome(str_i_saw);
-//    assert(result_i_saw == true);
-//    cout << "the phrase \"" + str_i_saw + "\" is a palindrome\n";
+// Task 5
+void task_5_Test_Drive()
+{
+   std::string str_i_saw = std::string("was it a car or A Cat I saW?");
+   bool result_i_saw = is_palindrome(str_i_saw);
+   assert(result_i_saw == true);
+   cout << "the phrase \"" + str_i_saw + "\" is a palindrome\n";
 
-//    std::string str_u_saw = std::string("was it A Car or a cat U saW?");
-//    bool result_u_saw = is_palindrome(str_u_saw);
-//    assert(result_u_saw == false);
-//    cout << "the phrase \"" + str_u_saw + "\" is not a palindrome\n";
-// }
+   std::string str_u_saw = std::string("was it A Car or a cat U saW?");
+   bool result_u_saw = is_palindrome(str_u_saw);
+   assert(result_u_saw == false);
+   cout << "the phrase \"" + str_u_saw + "\" is not a palindrome\n";
+}
 
-// // Task 6
-// void task_6_test_driver()
-// {
-//    std::vector<std::string> vecstr
-//    { "count_if", "Returns", "the", "number", "of", "elements", "in", "the",
-//       "range", "[first", "last)", "for", "which", "pred", "is", "true."
-//    };
-//    assert(count_using_lambda(vecstr, 5) == 4);
-//    assert(count_using_Free_Func(vecstr, 5) == 4);
-//    assert(count_using_Free_Func(vecstr, 5) == 4);
+// Task 6
+void task_6_test_driver()
+{
+   std::vector<std::string> vecstr
+   { "count_if", "Returns", "the", "number", "of", "elements", "in", "the",
+      "range", "[first", "last)", "for", "which", "pred", "is", "true."
+   };
+   assert(count_using_lambda(vecstr, 5) == 4);
+   assert(count_using_Free_Func(vecstr, 5) == 4);
+   assert(count_using_Functor(vecstr, 5) == 4);
 
-//    assert(count_using_lambda(vecstr, 3) == 3);
-//    assert(count_using_Free_Func(vecstr, 3) == 3);
-//    assert(count_using_Free_Func(vecstr, 3) == 3);
+   assert(count_using_lambda(vecstr, 3) == 3);
+   assert(count_using_Free_Func(vecstr, 3) == 3);
+   assert(count_using_Functor(vecstr, 3) == 3);
 
-//    cout << "Task 6 OK" << endl;
-// }
+   cout << "Task 6 OK" << endl;
+}
 
 // // Task 7
 // void task_7_test_driver()
@@ -180,10 +180,12 @@ int main()
    task_2_Test_Drive(words_vector);
    cout << "\n========== TASK 3 ==========\n" << endl;
    task_3_Test_Drive(words_vector);
-   // task_4_Test_Drive(words_vector);
-
-   // task_5_Test_Drive();
-   // task_6_test_driver();
+   cout << "\n========== TASK 4 ==========\n" << endl;
+   task_4_Test_Drive(words_vector);
+   cout << "\n========== TASK 5 ==========\n" << endl;
+   task_5_Test_Drive();
+   cout << "\n========== TASK 6 ==========\n" << endl;
+   task_6_test_driver();
    // task_7_test_driver();
    // task_8_test_driver(15);
 
