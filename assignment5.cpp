@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iterator>
 #include <algorithm>
+#include <set>
 
 #include "assignment5.h"
 
@@ -174,4 +175,49 @@ size_t count_using_Free_Func(const std::vector<std::string>& vec, int n)
     return std::count_if(vec.begin(), 
                          vec.end(), 
                          freeFuncOneArgument);
+}
+
+void multisetUsingDefaultComparator(const std::vector<std::string>& vec)
+{
+    std::multiset<std::string> strSet; // an empty set
+
+    // to print a sorted verstion of the supplied vector vec,
+    // we first copy vec to our strSet and then print the strSet.
+
+    // note: since std::multiset does not provide push_front or push_back members,
+    // we can't use a front or back inserter when we copy vec to our empty strSet,
+    // meaning that we must use a general inserter:
+
+    std::copy(vec.begin(), vec.end(),                   // source start and finish
+              std::inserter(strSet, strSet.begin()));   // destination start using
+                                                        // a general inserter
+
+    // create an ostream_iterator attached to cout, using a space " " as a separator
+    std::ostream_iterator<std::string> out(std::cout, " ");
+
+    // output the set elements to the cout
+    std::copy(strSet.begin(), strSet.end(), out);
+}
+
+struct CustomMultiSetComparator
+{
+    bool operator() (const std::string& lhs, const std::string& rhs) const 
+    {
+        if (lhs.length() == rhs.length()) 
+        {
+            return lhs < rhs;
+        }
+    return lhs.length() < rhs.length();
+  }
+};
+
+void multisetUsingMyComparator(const std::vector<std::string>& vec)
+{
+    std::multiset<std::string, CustomMultiSetComparator> strSet;
+
+    std::copy(vec.begin(), vec.end(),                   
+              std::inserter(strSet, strSet.begin()));  
+
+    std::ostream_iterator<std::string> out(std::cout, " ");
+    std::copy(strSet.begin(), strSet.end(), out);
 }

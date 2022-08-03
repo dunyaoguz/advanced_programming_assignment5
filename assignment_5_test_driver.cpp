@@ -149,16 +149,16 @@ void task_6_test_driver()
    cout << "Task 6 OK" << endl;
 }
 
-// // Task 7
-// void task_7_test_driver()
-// {
-//    std::vector<std::string> vec =
-//    { "C", "BB", "A", "CC", "A", "B", "BB", "A", "D", "CC", "DDD", "AAA" };
-//    multisetUsingDefaultComparator(vec);
-//    cout << '\n';
-//    multisetUsingMyComparator(vec);
-//    cout << endl;
-// }
+// Task 7
+void task_7_test_driver()
+{
+   std::vector<std::string> vec =
+   { "C", "BB", "A", "CC", "A", "B", "BB", "A", "D", "CC", "DDD", "AAA" };
+   multisetUsingDefaultComparator(vec);
+   cout << '\n';
+   multisetUsingMyComparator(vec);
+   cout << endl;
+}
 
 // // Task 8
 // void task_8_test_driver(int n)
@@ -186,7 +186,8 @@ int main()
    task_5_Test_Drive();
    cout << "\n========== TASK 6 ==========\n" << endl;
    task_6_test_driver();
-   // task_7_test_driver();
+   cout << "\n========== TASK 7 ==========\n" << endl;
+   task_7_test_driver();
    // task_8_test_driver(15);
 
    return 0;
