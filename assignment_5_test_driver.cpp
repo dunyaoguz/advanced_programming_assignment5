@@ -160,15 +160,15 @@ void task_7_test_driver()
    cout << endl;
 }
 
-// // Task 8
-// void task_8_test_driver(int n)
-// {
-//    cout << "Fibonacci Sequence" << endl;
-//    std::vector<int> fibs = getnerate_Fibonacci(n);
-//    std::copy(fibs.begin(), fibs.end(), std::ostream_iterator<int>(cout, " "));
-//    assert(fibs[9] == 34);
-//    assert(fibs[14] == 377);
-// }
+// Task 8
+void task_8_test_driver(int n)
+{
+   cout << "Fibonacci Sequence" << endl;
+   std::vector<int> fibs = getnerate_Fibonacci(n);
+   std::copy(fibs.begin(), fibs.end(), std::ostream_iterator<int>(cout, " "));
+   assert(fibs[9] == 34);
+   assert(fibs[14] == 377);
+}
 
 int main()
 {

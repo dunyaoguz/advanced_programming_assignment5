@@ -221,3 +221,8 @@ void multisetUsingMyComparator(const std::vector<std::string>& vec)
     std::ostream_iterator<std::string> out(std::cout, " ");
     std::copy(strSet.begin(), strSet.end(), out);
 }
+
+std::vector<int> getnerate_Fibonacci(int n)
+{
+    
+}
