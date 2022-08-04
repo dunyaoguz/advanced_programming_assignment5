@@ -222,7 +222,45 @@ void multisetUsingMyComparator(const std::vector<std::string>& vec)
     std::copy(strSet.begin(), strSet.end(), out);
 }
 
-std::vector<int> getnerate_Fibonacci(int n)
+int gen()
 {
-    
+    static int one_before = 0;
+    static int two_before = 0;
+    static int count = 0;
+
+    // we are at n = 1
+    if(count == 0)
+    {
+        count++;
+        return 0;
+    }
+    // we are at n = 2
+    else if(count == 1)
+    {
+        one_before = 1;
+        count++;
+        return one_before;
+    }
+    // we are at n = 2
+    else if(count == 2)
+    {
+        two_before = 1;
+        count++;
+        return two_before;
+    }
+    // we are at n > 2
+    else 
+    {
+        int new_val = one_before + two_before;
+        two_before = one_before;
+        one_before = new_val;
+        return new_val;
+    }
+}
+
+std::vector<int> generate_Fibonacci(int n)
+{
+    std::vector<int> fibo(n);
+    std::generate_n(fibo.begin(), n, gen);
+    return fibo;
 }
